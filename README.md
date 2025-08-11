@@ -7,6 +7,10 @@
 - install daisyui 
 - install react-router-dom
 - install axios
+- install redux toolkit
+- install react-redux
+- install redux devtool in chrome
+
 
 
 
