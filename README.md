@@ -6,6 +6,7 @@
 - install tailwindcss
 - install daisyui 
 - install react-router-dom
+- install axios
 
 
 
