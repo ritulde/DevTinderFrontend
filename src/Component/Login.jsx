@@ -12,7 +12,8 @@ export const Login = () => {
   const [password,setPassword]=useState("");
 
   const dispach= useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [error,setError]= useState("")
 
   const handleLogin = async ()=>{
     try{
@@ -23,7 +24,7 @@ export const Login = () => {
       dispach(addUser(res.data));
       return navigate("/")
     }catch(err){
-      console.log(err.message);
+      setError(err.response.data);
     }
   }
 
@@ -44,6 +45,7 @@ export const Login = () => {
               <input type="password" className="input" value={password} placeholder="Type here" onChange={(e)=>setPassword(e.target.value)} />
             </fieldset>
           </div>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary" onClick={handleLogin}>Login</button>
           </div>
