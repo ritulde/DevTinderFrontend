@@ -14,15 +14,14 @@ export const Body = () => {
     const fetchUser = async (req,res) => {
       if(userData) return;
       try{
-        const user= await axios.get(BASE_URL+"/profile/view",{
+        await axios.get(BASE_URL+"/profile/view",{
           withCredentials: true
         });
-        dispatch(addUser(res.data))
+        dispatch(addUser(res?.data))
       }catch(err){
         if(err.status===401){
           navigate("/login");
         }
-        console.log(err);
       }
     };
     useEffect(()=>{
